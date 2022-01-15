@@ -7,6 +7,8 @@ import 'package:get_storage/get_storage.dart';
 
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -20,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //here determine the number of seconds for splash screen
     super.initState();
     userdate.writeIfNull('isLogged', false);
-    Future.delayed(Duration(seconds: 3), () async {
+    Future.delayed(const Duration(seconds: 3), () async {
       //call function here
       checkiflogged();
     });
