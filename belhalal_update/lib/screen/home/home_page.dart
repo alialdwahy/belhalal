@@ -5,6 +5,7 @@ import '../new_image_slider.dart';
 import '../profile_screen.dart';
 import '../search.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
   int? selectedIndex;

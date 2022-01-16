@@ -7,17 +7,10 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 
-class SearchForm extends StatefulWidget {
-  const SearchForm({
-    Key? key,
+class SearchForm extends StatelessWidget {
+   SearchForm({
+   final Key? key,
   }) : super(key: key);
-
-  @override
-  State<SearchForm> createState() => _SearchFormState();
-}
-
-class _SearchFormState extends State<SearchForm> {
-  // final List<String> _dropdownItems = ['الكويت', 'العراق', 'السعودية'];
   RangeValues _rangeSliderDiscreteValues = const RangeValues(26, 45);
   String _dropdownValue = 'السعودية';
   double newAge = 25;
@@ -25,7 +18,6 @@ class _SearchFormState extends State<SearchForm> {
 
   @override
   void initState() {
-    super.initState();
   }
 
   getUsers() async {
@@ -44,7 +36,6 @@ class _SearchFormState extends State<SearchForm> {
     // setState(() {});
     // EasyLoading.dismiss();
   }
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -96,9 +87,10 @@ class _SearchFormState extends State<SearchForm> {
                           _rangeSliderDiscreteValues.end.round().toString(),
                         ),
                         onChanged: (values) {
-                          setState(() {
+                          //TODO: update variable using controller
+                         // setState(() {
                             _rangeSliderDiscreteValues = values;
-                          });
+                         // });
                         },
                       ),
                       const Text(': العمر',
@@ -111,9 +103,10 @@ class _SearchFormState extends State<SearchForm> {
                   DropDownTxtField(
                     dropdownValue: _dropdownValue,
                     onChanged: (String? newValue) {
-                      setState(() {
+                     //TODO: update variable using controller  
+                    //     setState(() {
                         _dropdownValue = newValue!;
-                      });
+                    //   });
                     },
                   ),
                   SizedBox(

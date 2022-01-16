@@ -52,6 +52,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
         ?     Get.offAll(() =>  HomePage())
 
-        : Get.offAll(() => Login());
+        : Get.offAll(() => LoginScreen());
   }
 }

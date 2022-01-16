@@ -1,28 +1,25 @@
 import 'package:belhalal_update/screen/widgets/block_list_tab_bar.dart';
 import 'package:belhalal_update/screen/widgets/like_list_tab_bar.dart';
 import 'package:belhalal_update/screen/widgets/search_tab_bar.dart';
+import 'package:belhalal_update/value/const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
-class SearchScreen extends StatefulWidget {
+class SearchScreen extends StatelessWidget {
   const SearchScreen({ Key? key }) : super(key: key);
-  @override
-  _SearchScreenState createState() => _SearchScreenState();
-}
-class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: Colors.red[400],//kPrimaryColor ,
+        backgroundColor: Constant.kPrimaryColor,
         appBar: AppBar(
           toolbarHeight: 80,
           elevation: 0,
           automaticallyImplyLeading :false,
           centerTitle:true,
-          backgroundColor: Colors.red[400],//kPrimaryColor ,
+          backgroundColor: Constant.kPrimaryColor,
           title:Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -68,8 +65,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
           ),
         ),
-        body: const 
-          SearchForm(),
+        body: SearchForm(),
       ),
     );
   }
